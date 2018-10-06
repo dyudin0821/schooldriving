@@ -23,5 +23,9 @@ urlpatterns = [
     re_path(r'^$', views.index),
     path('news/', views.news, name='news'),
     re_path('news/post/(?P<post>[0-9]+)/$', views.news_post, name='post'),
+    path('teachers/', views.teachers, name='teachers'),
+    path('classes/', views.classes, name='classes'),
+    path('classes/<branch>/', views.form_record, name='form'),
+    path('confidential/', views.get_confidential, name='confidential'),
 
 ]

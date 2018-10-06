@@ -36,8 +36,17 @@ class TeachersAdmin(admin.ModelAdmin):
         model = Teachers
 
 
+class ContactsAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Contacts._meta.fields]
+    search_fields = [search.name for search in Contacts._meta.fields]
+
+    class Meta:
+        model = Contacts
+
+
 admin.site.register(Branches, BranchesAdmin)
 admin.site.register(Tagline)
 admin.site.register(Price, PricesAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Teachers, TeachersAdmin)
+admin.site.register(Contacts,ContactsAdmin)

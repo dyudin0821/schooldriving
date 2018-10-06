@@ -1091,6 +1091,7 @@ section {
 
 .register_button_curs {
     background: #1a1a1a;
+    /*background: #ffb606;*/
     margin-top: 0px;
     margin-left: auto !important;
     color: white;
@@ -1254,7 +1255,8 @@ input:last-of-type {
 .service_item p {
     font-size: 15px;
     font-weight: 500;
-    color: #727272;
+    /*color: #727272;*/
+    color: black;
     max-width: 100%;
     margin-bottom: 0px;
 }

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>АЛЬТЕРНАТИВА - автошкола СПб, курсы вождения</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="index,all" name="robots"/>
+    <meta name="Keywords"
+          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, петергоф, красносе"/>
+    <meta name="Description"
+          content="Альтернатива - автошкола в СПб. Курсы вождения легкового автомобиля - высокое качество, оптимальные сроки, реальные цены."/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Course Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/contact_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/contact_responsive.css' %}">
+    <script type="text/javascript" async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2PRGhX8JtUtV7hWqFQKO1tRykjTpdkKc"></script>
+</head>
+<body>
+
+<div class="super_container">
+
+    <!-- Header -->
+
+    <header class="header d-flex flex-row">
+        <div class="header_content d-flex flex-row align-items-center">
+            <!-- Logo -->
+            <div class="logo_container">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                    <span><a id="logo-name" href="/">Альтернатива</a></span>
+                </div>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main_nav_container">
+                <div class="main_nav">
+                    <ul class="main_nav_list">
+                        <li class="main_nav_item"><a href="/">О Нас</a></li>
+                        <li class="main_nav_item"><a href="/classes">Филиалы</a></li>
+                        <li class="main_nav_item"><a href="#course">Обучение</a></li>
+                        <li class="main_nav_item"><a href="/news">Новости</a></li>
+                        {#                        <li class="main_nav_item"><a href="elements.html">elements</a></li>#}
+                        <li class="main_nav_item"><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header_side d-flex flex-row justify-content-center align-items-center">
+            <img src="{% static 'images/phone-call.svg' %}" alt="">
+            <span>+7 (812) 404-7000</span>
+        </div>
+
+        <!-- Hamburger -->
+        <div class="hamburger_container">
+            <i class="fas fa-bars trans_200"></i>
+        </div>
+
+    </header>
+
+    <!-- Menu -->
+    <div class="menu_container menu_mm">
+
+        <!-- Menu Close Button -->
+        <div class="menu_close_container">
+            <div class="menu_close"></div>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="menu_inner menu_mm">
+            <div class="menu menu_mm">
+                <ul class="menu_list menu_mm">
+                    <li class="menu_item menu_mm"><a href="/">О нас</a></li>
+                    <li class="menu_item menu_mm"><a href="/classes">Филиалы</a></li>
+                    <li class="menu_item menu_mm"><a href="/#course">Обучение</a></li>
+                    {#                    <li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>#}
+                    <li class="menu_item menu_mm"><a href="/news">Новости</a></li>
+                    <li class="menu_item menu_mm"><a href="contact.html">Контакты</a></li>
+                </ul>
+
+                <!-- Menu Social -->
+
+                <div class="menu_social_container menu_mm">
+                    <ul class="menu_social menu_mm">
+                        <li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-vk"></i></a></li>
+                        <li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="home_background_container prlx_parent">
+            <div class="home_background prlx"
+                 style="background-image:url({% static 'images/news_background.jpg' %})"></div>
+        </div>
+        <div class="home_content">
+            <h1>НАШИ ФИЛИАЛЫ</h1>
+        </div>
+    </div>
+
+    <!-- Contact -->
+
+    <div class="contact">
+        <div class="container">
+            {% for branch in branches %}
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="about">
+                            <div class="about_title">{{ branch.name }}</div>
+                            <p class="about_text">{{ branch.description | default:'' | safe}}</p>
+
+                            <div class="contact_info">
+                                <ul>
+                                    <li class="contact_info_item">
+                                        <div class="contact_info_icon">
+                                            <img src="{% static 'images/placeholder.svg' %}"
+                                                 alt="https://www.flaticon.com/authors/lucy-g">
+                                        </div>
+                                        {{ branch.address }}
+                                    </li>
+                                    <li class="contact_info_item">
+                                        <div class="contact_info_icon">
+                                            <img src="{% static 'images/smartphone.svg' %}"
+                                                 alt="https://www.flaticon.com/authors/lucy-g">
+                                        </div>
+                                        <a href="tel://{{ branch.phone }}">{{ branch.phone }}</a>
+                                    </li>
+                                    <li class="contact_info_item">
+                                        <div class="contact_info_icon">
+                                            <img src="{% static 'images/envelope.svg' %}"
+                                                 alt="https://www.flaticon.com/authors/lucy-g">
+                                        </div>
+                                        hello@company.com
+                                    </li>
+                                    <li>
+                                        <div class="button button_1 register_button_branch mx-auto "><a href="/classes/{{ branch.url }}/">Записаться</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <!-- Google Map -->
+
+            <div class="row">
+                <div class="col">
+                    <div id="google_maps">
+                        <div class="map_container">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <!-- Footer Content -->
+
+            <div class="footer_content">
+                <div class="row">
+
+                    <!-- Footer Column - About -->
+                    <div class="col-lg-3 footer_col">
+
+                        <!-- Logo -->
+                        <div class="logo_container">
+                            <div class="logo">
+                                <img src="{% static 'images/logo.png' %}" alt="">
+                                <span>Альтернатива</span>
+                            </div>
+                        </div>
+
+                        <p class="footer_about_text">Мы делаем дорогу безопаснее</p>
+
+                    </div>
+
+                    <!-- Footer Column - Menu -->
+
+                    <div class="col-lg-3 footer_col">
+                        <div class="footer_column_title">Меню</div>
+                        <div class="footer_column_content">
+                            <ul>
+                                <li class="footer_list_item"><a href="/">О нас</a></li>
+                                <li class="footer_list_item"><a href="/classes">Филиалы</a></li>
+                                <li class="footer_list_item"><a href="/#course">Обучение</a></li>
+                                <li class="footer_list_item"><a href="/news">Новости</a></li>
+                                <li class="footer_list_item"><a href="contact.html">Филиалы</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- Footer Column - Contact -->
+
+                    <div class="col-lg-3 footer_col">
+                        <div class="footer_column_title">Контакты</div>
+                        <div class="footer_column_content">
+                            <ul>
+                                <li class="footer_contact_item">
+                                    <div class="footer_contact_icon">
+                                        <img src="{% static 'images/placeholder.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    Петродворцовый район, Санкт-Петербургский пр., д.60.
+
+                                </li>
+                                <li class="footer_contact_item">
+                                    <div class="footer_contact_icon">
+                                        <img src="{% static 'images/smartphone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    +7 (812) 404-7000
+                                </li>
+                                <li class="footer_contact_item">
+                                    <div class="footer_contact_icon">
+                                        <img src="{% static 'images/envelope.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    hello@404-7000.ru
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Copyright -->
+
+            <div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+                <div class="footer_copyright">
+					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> автошкола Альтернатива</span>
+                </div>
+                <div class="footer_social ml-sm-auto">
+                    <ul class="menu_social">
+                        <li class="menu_social_item"><a href="#"><i class="fab fa-vk"></i></a></li>
+                        <li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+{#<script src="{% static 'js/contact_custom.js' %}"></script>#}
+<script src="{% static 'js/gmaps.js' %}"></script>
+<script src="{% static 'js/maps.js' %}"></script>
+
+</body>
+</html>

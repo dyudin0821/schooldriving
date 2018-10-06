@@ -12,12 +12,13 @@ class Branches(models.Model):
     lat = models.CharField('Широта', max_length=50, default=None,
                                    help_text='Введите гео-координаты филиала вформате:60.0520376.Взять в google')
     lng = models.CharField('Долгота', max_length=50, default=None,help_text='Введите гео-координаты филиала вформате:30.334460.Взять в google')
-
+    url = models.CharField('Url страницы для записи', max_length=250,help_text='gorelovo', default='')
     is_active = models.BooleanField('Активен:', default=True)
-    description = models.CharField('Комментарий:', max_length=500, blank=True, null=True,)
+    description = RichTextField('Описание:', blank=True, null=True,)
+    comments = models.CharField('Комментарий:', max_length=500, blank=True, null=True,)
 
     def __str__(self):
-        return '%s' % self.name
+        return self.name
 
     class Meta:
         verbose_name = 'Филиал'
@@ -74,6 +75,7 @@ class Teachers(models.Model):
     phone = models.CharField('Номер телефона:', max_length=25, blank=True, null=True,)
     avatar = models.ImageField('Аватар', upload_to='teachers/',)
     car_model = models.CharField('Марка автомобиля', max_length=30, blank=True, null=True)
+    is_active = models.BooleanField('Активен:', default=True)
 
     def __str__(self):
         return '%s' % self.full_name
@@ -81,5 +83,24 @@ class Teachers(models.Model):
     class Meta:
         verbose_name = 'Предподователь'
         verbose_name_plural = 'Предподователи'
+
+
+class Contacts(models.Model):
+    location = models.CharField('Район города', max_length=250,)
+    default_phone = models.CharField('Основной номер телефона:', max_length=25,)
+    secondary_phone = models.CharField('Доп. номер телефона:', max_length=25, blank=True, null=True,)
+    admin_email = models.EmailField('E-mail администратора')
+    vk_group = models.CharField('Ссылка на группу Вк', max_length=100, blank=True, null=True,)
+    instagram = models.CharField('Ссылка на страницу Instagram', max_length=100, blank=True, null=True,)
+
+    def __str__(self):
+        title = ' '.join([self.location, self.default_phone, self.admin_email])
+        return '%s' % title
+
+    class Meta:
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
+
+
 
 
