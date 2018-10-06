@@ -9,6 +9,10 @@ from .models import *
 def index(request):
     taglines = Tagline.objects.filter(is_active=True)
     price = Price.objects.filter(is_active=True)
+    branches = Branches.objects.filter(is_active=True)
+    count_elements = len(branches)
+    size_block = 12 / count_elements
+
     return render(request, 'index.html', locals())
 
 

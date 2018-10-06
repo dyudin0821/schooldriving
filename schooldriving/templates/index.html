@@ -19,6 +19,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+    <script type="text/javascript" async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2PRGhX8JtUtV7hWqFQKO1tRykjTpdkKc"></script>
+
+
 </head>
 <body>
 
@@ -189,10 +193,9 @@
                                 <div class="card-text">{{ item.description }}</div>
                             </div>
                             <div class="price_box d-flex flex-row align-items-center">
-                                <div class="course_author_image">
-                                    <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+                                <div class="button button_1 register_button_curs "><a href="#"
+                                                                                      class="record">Записаться</a>
                                 </div>
-                                <div class="course_author_name">Michael Smith, <span>Author</span></div>
                                 <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                     <span>{{ item.price }} руб</span></div>
                             </div>
@@ -206,59 +209,6 @@
     </div>
 
     <!-- Register -->
-
-    <div class="register">
-
-        <div class="container-fluid">
-
-            <div class="row row-eq-height">
-                <div class="col-lg-6 nopadding">
-
-                    <!-- Register -->
-
-                    <div class="register_section d-flex flex-column align-items-center justify-content-center">
-                        <div class="register_content text-center">
-                            <h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1
-                                January</h1>
-                            <p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla,
-                                vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.
-                                Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
-                            <div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6 nopadding">
-
-                    <!-- Search -->
-
-                    <div class="search_section d-flex flex-column align-items-center justify-content-center">
-                        <div class="search_background"
-                             style="background-image:url( {% static 'images/search_background.jpg' %});"></div>
-                        <div class="search_content text-center">
-                            <h1 class="search_title">Search for your course</h1>
-                            <form id="search_form" class="search_form" action="post">
-                                <input id="search_form_name" class="input_field search_form_name" type="text"
-                                       placeholder="Course Name" required="required"
-                                       data-error="Course name is required.">
-                                <input id="search_form_category" class="input_field search_form_category" type="text"
-                                       placeholder="Category">
-                                <input id="search_form_degree" class="input_field search_form_degree" type="text"
-                                       placeholder="Degree">
-                                <button id="search_submit_button" type="submit" class="search_submit_button trans_200"
-                                        value="Submit">search course
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Services -->
 
     <div class="services page_section">
@@ -267,7 +217,7 @@
             <div class="row">
                 <div class="col">
                     <div class="section_title text-center">
-                        <h1>Our Services</h1>
+                        <h1>О Автошколе</h1>
                     </div>
                 </div>
             </div>
@@ -276,63 +226,98 @@
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
-                        <img src="{% static 'images/earth-globe.svg' %}" alt="">
+                        <img src="{% static 'images/icons8-calendar-24.png' %}" alt="">
                     </div>
-                    <h3>Online Courses</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>Удобный график обучения:</h3>
+                    <ul>
+                        <li>утренняя группа — с 10:00 до 12:00 два раза в неделю;</li>
+                        <li>вечерняя группа — с 19:00 до 21:00 два раза в неделю;</li>
+                        <li>группа выходного дня — с 10:00 до 14:00 один раз в неделю (суббота или воскресенье).</li>
+                    </ul>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
-                        <img src="{% static 'images/exam.svg' %}" alt="">
+                        <img src="{% static 'images/icons8-graduation-cap-32.png' %}" alt="">
                     </div>
-                    <h3>Indoor Courses</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>137 ЧАСОВ ТЕОРИИ</h3>
+                    <p>В специально в подготовленных классах для успешного прохождения теоритического курса</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
-                        <img src="{% static 'images/books.svg' %}" alt="">
+                        <img src="{% static 'images/icons8-sedan-50.png' %}" alt="">
                     </div>
-                    <h3>Amazing Library</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>56 ЧАСОВ</h3>
+                    <p>Практических занятий на механике.<br> В результате, вы научитесь которых качественно
+                        управлять ТС</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
-                        <img src="{% static 'images/professor.svg' %}" alt="">
+                        <img src="{% static 'images/icons8-sedan-24.png' %}" alt="">
                     </div>
-                    <h3>Exceptional Professors</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>54 ЧАСОВ</h3>
+                    <p>Практических занятий на автомате. <br> Мы готовим водитлей к реальной дороги, <br> а не просто
+                        сдавать экзамен в ГАИ</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
-                        <img src="{% static 'images/blackboard.svg' %}" alt="">
+                        <img src="{% static 'images/icons8-teacher-hiring-50.png' %}" alt="">
                     </div>
-                    <h3>Top Programs</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>8 ИНСТРУКТОРОВ</h3>
+                    <p>Опытные инструктора по вождению,<br> за плечами которых не один год стажа</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
-                        <img src="{% static 'images/mortarboard.svg' %}" alt="">
+                        <img src="{% static 'images/icons8-class-32.png' %}" alt="">
                     </div>
-                    <h3>Graduate Diploma</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>Полная программа обучения</h3>
+                    <p>Работаем в соответствии с Программой профессиональной подготовки водителей транспортных
+                        средств.<br> Вам обеспечен полный курс теории и 56 часов вождения.</p>
                 </div>
 
             </div>
         </div>
     </div>
+    <div class="services page_section gray">
+        <div class="testimonials_background_container prlx_parent">
+            <div id="map"></div>
+        </div>
 
-    <!-- Testimonials -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h1>Филиалы</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row services_row">
+                {% for branch in branches %}
+                    <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+                        <div class="border-top">
+                            <h3>{{ branch.name }}</h3>
+                            <ul>
+                                <li>{{ branch.address }}</li>
+                                <li> {{ branch.description | default:'' }}
+                                <li>{{ branch.phone }}</li>
+
+                                </li>
+                            </ul>
+                            <div class="button button_1 register_button_branch mx-auto "><a href="#">Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
     <div class="testimonials page_section">
         <!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
@@ -345,7 +330,7 @@
             <div class="row">
                 <div class="col">
                     <div class="section_title text-center">
-                        <h1>What our students say</h1>
+                        <h1>Отзывы</h1>
                     </div>
                 </div>
             </div>
@@ -368,11 +353,7 @@
                                         vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
                                         fermentum.</p>
                                     <div class="testimonial_user">
-                                        <div class="testimonial_image mx-auto">
-                                            <img src="{% static 'images/testimonials_user.jpg' %}" alt="">
-                                        </div>
                                         <div class="testimonial_name">james cooper</div>
-                                        <div class="testimonial_title">Graduate Student</div>
                                     </div>
                                 </div>
                             </div>
@@ -387,11 +368,7 @@
                                         vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
                                         fermentum.</p>
                                     <div class="testimonial_user">
-                                        <div class="testimonial_image mx-auto">
-                                            <img src="{% static 'images/testimonials_user.jpg' %}" alt="">
-                                        </div>
                                         <div class="testimonial_name">james cooper</div>
-                                        <div class="testimonial_title">Graduate Student</div>
                                     </div>
                                 </div>
                             </div>
@@ -406,11 +383,7 @@
                                         vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
                                         fermentum.</p>
                                     <div class="testimonial_user">
-                                        <div class="testimonial_image mx-auto">
-                                            <img src="{% static 'images/testimonials_user.jpg' %}" alt="">
-                                        </div>
                                         <div class="testimonial_name">james cooper</div>
-                                        <div class="testimonial_title">Graduate Student</div>
                                     </div>
                                 </div>
                             </div>
@@ -654,7 +627,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
 <script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'js/gmaps.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/maps.js' %}"></script>
 
 </body>
 </html>

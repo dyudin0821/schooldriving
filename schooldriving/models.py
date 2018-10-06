@@ -9,8 +9,10 @@ class Branches(models.Model):
     name = models.CharField('Название филиала:', max_length=500)
     address = models.CharField('Адрес филиала:', max_length=500)
     phone = models.CharField('Номер телефона:', max_length=25, default='',)
-    coordinates = models.CharField('Координаты', max_length=50, default=None,
-                                   help_text='Введите гео-координаты филиала вформате:60.0520376,30.334460.Взять в google')
+    lat = models.CharField('Широта', max_length=50, default=None,
+                                   help_text='Введите гео-координаты филиала вформате:60.0520376.Взять в google')
+    lng = models.CharField('Долгота', max_length=50, default=None,help_text='Введите гео-координаты филиала вформате:30.334460.Взять в google')
+
     is_active = models.BooleanField('Активен:', default=True)
     description = models.CharField('Комментарий:', max_length=500, blank=True, null=True,)
 
