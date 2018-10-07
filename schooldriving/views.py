@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
+from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import *
+
 
 # Create your views here.
 
@@ -37,9 +41,39 @@ def classes(request):
 
 def form_record(request, branch):
     branches = Branches.objects.get(url=branch)
+    category = Price.objects.all()
     branch_name = branches.name
     return render(request, 'record_courses.html', locals())
 
 
+def add_order(request):
+    if request.POST:
+        name = request.POST['full_name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        branch = request.POST['branch']
+        cat = request.POST['category']
+        category = Price.objects.get(name=cat)
+        filial = Branches.objects.get(name=branch)
+        contact = Contacts.objects.get(id=filial.id)
+        order = Orders(name=name, email=email, phone=phone, branch=filial, category=category)
+        order.save()
+        sbj = 'Внимание! Новая заявка от %s; Номер телефона: %s' % (name, phone)
+        msg = "Новая заявка с сайта\n" \
+              "%s желает записаться на %s в филиале %s\n" \
+              "------- Данные клиента -------\n" \
+              "Имя: %s\n" \
+              "Телефон: %s\n" \
+              "E-mail: %s\n" \
+              % (name, cat, branch, name, phone, email)
+        send_mail(sbj, msg, settings.EMAIL_HOST_USER, [email])
+        return JsonResponse({'location': '/'})
+    else:
+        get = request.GET
+        print(get)
+        return HttpResponse('Error')
+
+
 def get_confidential(request):
-    return render(request,'confidential.html',locals())
+    return render(request, 'confidential.html', locals())
+

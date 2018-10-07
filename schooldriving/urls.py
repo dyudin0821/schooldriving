@@ -26,6 +26,7 @@ urlpatterns = [
     path('teachers/', views.teachers, name='teachers'),
     path('classes/', views.classes, name='classes'),
     path('classes/<branch>/', views.form_record, name='form'),
+    path('add_order/', views.add_order, name='add_order'),
     path('confidential/', views.get_confidential, name='confidential'),
 
 ]

@@ -117,7 +117,7 @@
                     <div class="col-lg-8">
                         <div class="about">
                             <div class="about_title">{{ branch.name }}</div>
-                            <p class="about_text">{{ branch.description | default:'' | safe}}</p>
+                            <p class="about_text">{{ branch.description | default:'' | safe }}</p>
 
                             <div class="contact_info">
                                 <ul>
@@ -143,7 +143,8 @@
                                         hello@company.com
                                     </li>
                                     <li>
-                                        <div class="button button_1 register_button_branch mx-auto "><a href="/classes/{{ branch.url }}/">Записаться</a>
+                                        <div class="button button_1 register_button_branch mx-auto "><a
+                                                href="/classes/{{ branch.url }}/">Записаться</a>
                                         </div>
                                     </li>
                                 </ul>

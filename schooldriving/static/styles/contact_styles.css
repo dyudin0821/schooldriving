@@ -215,6 +215,9 @@ section {
 .clearfix {
     zoom: 1;
 }
+.hidden {
+    display: none;
+}
 
 .float_left {
     float: left;
@@ -751,7 +754,11 @@ section {
 /*********************************
 9. Contact
 *********************************/
-
+.alert-warning{
+    background: #ffb606;
+    color: white;
+    font-size: 16px;
+}
 .contact {
     padding-top: 106px;
     padding-bottom: 117px;

@@ -116,6 +116,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = '3\Y##DFG39^)'
+EMAIL_PORT = '465'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

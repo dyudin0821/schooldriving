@@ -3,7 +3,6 @@ from .models import *
 
 # Register your models here.
 
-
 class BranchesAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Branches._meta.fields]
     search_fields = [search.name for search in Branches._meta.fields]
@@ -23,6 +22,7 @@ class PricesAdmin(admin.ModelAdmin):
 class NewsAdmin(admin.ModelAdmin):
     list_display = [field.name for field in News._meta.fields]
     search_fields = [search.name for search in News._meta.fields]
+    list_filter = ['is_active']
 
     class Meta:
         model = Price
@@ -31,6 +31,7 @@ class NewsAdmin(admin.ModelAdmin):
 class TeachersAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Teachers._meta.fields]
     search_fields = [search.name for search in Teachers._meta.fields]
+    list_filter = ['is_active']
 
     class Meta:
         model = Teachers
@@ -44,9 +45,25 @@ class ContactsAdmin(admin.ModelAdmin):
         model = Contacts
 
 
+class OrdersAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Orders._meta.fields]
+    search_fields = [search.name for search in Orders._meta.fields]
+    list_filter = ['is_processed']
+    actions = ['processed']
+
+    def processed(self, request, queryset):
+        queryset.update(is_processed=True)
+
+    processed.short_description = "Изменить состояние"
+
+    class Meta:
+        model = Orders
+
+
 admin.site.register(Branches, BranchesAdmin)
 admin.site.register(Tagline)
 admin.site.register(Price, PricesAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Teachers, TeachersAdmin)
 admin.site.register(Contacts,ContactsAdmin)
+admin.site.register(Orders,OrdersAdmin)

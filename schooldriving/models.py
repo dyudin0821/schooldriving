@@ -86,7 +86,7 @@ class Teachers(models.Model):
 
 
 class Contacts(models.Model):
-    location = models.CharField('Район города', max_length=250,)
+    branch = models.ForeignKey('Branches', on_delete=models.CASCADE, default='', )
     default_phone = models.CharField('Основной номер телефона:', max_length=25,)
     secondary_phone = models.CharField('Доп. номер телефона:', max_length=25, blank=True, null=True,)
     admin_email = models.EmailField('E-mail администратора')
@@ -94,7 +94,7 @@ class Contacts(models.Model):
     instagram = models.CharField('Ссылка на страницу Instagram', max_length=100, blank=True, null=True,)
 
     def __str__(self):
-        title = ' '.join([self.location, self.default_phone, self.admin_email])
+        title = ' '.join([str(self.branch), self.default_phone, self.admin_email])
         return '%s' % title
 
     class Meta:
@@ -102,5 +102,20 @@ class Contacts(models.Model):
         verbose_name_plural = 'Контакты'
 
 
+class Orders(models.Model):
+    name = models.CharField('Имя клиента:', max_length=250,)
+    email = models.EmailField('E-mail клиента',)
+    phone = models.CharField('Телефон клиента', max_length=25,)
+    branch = models.ForeignKey('Branches', on_delete=models.CASCADE, default='',)
+    category = models.ForeignKey('Price', on_delete=models.CASCADE, default='',)
+    is_processed = models.BooleanField('Обработана заявка', default='False')
+
+    def __str__(self):
+        title = ' '.join([self.name, self.email, self.phone])
+        return '%s' % title
+
+    class Meta:
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'
 
 

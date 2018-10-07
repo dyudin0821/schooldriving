@@ -229,7 +229,9 @@ section {
 .clearfix {
     zoom: 1;
 }
-
+.hidden {
+    display: none;
+}
 .float_left {
     float: left;
 }
