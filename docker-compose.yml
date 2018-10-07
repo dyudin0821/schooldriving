@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  db:
+    image: mysql:5.7
+    hostname: db
+    container_name: db
+    ports:
+    - "${MYSQL_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+    - data:/data
+    - mycustom.cnf:/etc/mysql/conf.d/custom.cnf
+    restart: always
+
+volumes:
+  data:
+    external: true
