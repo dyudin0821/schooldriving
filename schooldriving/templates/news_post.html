@@ -92,7 +92,8 @@
 
     <div class="home">
         <div class="home_background_container prlx_parent">
-            <div class="home_background prlx" style="background-image:url( {%  static 'images/news_background.jpg' %})"></div>
+            <div class="home_background prlx"
+                 style="background-image:url( {% static 'images/news_background.jpg' %})"></div>
         </div>
         <div class="home_content">
             <h1>Новости</h1>
@@ -271,7 +272,8 @@
                                 <!-- Latest Post -->
                                 <div class="latest_post">
                                     <div class="latest_post_image">
-                                        <img src="{% static 'images/latest_1.jpg' %}" alt="https://unsplash.com/@dsmacinnes">
+                                        <img src="{% static 'images/latest_1.jpg' %}"
+                                             alt="https://unsplash.com/@dsmacinnes">
                                     </div>
                                     <div class="latest_post_title"><a href="news_post.html">Why do you need a
                                         qualification?</a></div>
@@ -285,7 +287,8 @@
                                 <!-- Latest Post -->
                                 <div class="latest_post">
                                     <div class="latest_post_image">
-                                        <img src="{% static 'images/latest_2.jpg' %}" alt="https://unsplash.com/@erothermel">
+                                        <img src="{% static 'images/latest_2.jpg' %}"
+                                             alt="https://unsplash.com/@erothermel">
                                     </div>
                                     <div class="latest_post_title"><a href="news_post.html">Why do you need a
                                         qualification?</a></div>
@@ -299,7 +302,8 @@
                                 <!-- Latest Post -->
                                 <div class="latest_post">
                                     <div class="latest_post_image">
-                                        <img src="{% static 'images/latest_3.jpg' %}" alt="https://unsplash.com/@element5digital">
+                                        <img src="{% static 'images/latest_3.jpg' %}"
+                                             alt="https://unsplash.com/@element5digital">
                                     </div>
                                     <div class="latest_post_title"><a href="news_post.html">Why do you need a
                                         qualification?</a></div>
@@ -425,8 +429,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
                         <li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-            </div>
+                <!-- Yandex.Metrika counter -->
+                <script type="text/javascript">
+                    (function (d, w, c) {
+                        (w[c] = w[c] || []).push(function () {
+                            try {
+                                w.yaCounter44311074 = new Ya.Metrika({
+                                    id: 44311074,
+                                    clickmap: true,
+                                    trackLinks: true,
+                                    accurateTrackBounce: true
+                                });
+                            } catch (e) {
+                            }
+                        });
 
+                        var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function () {
+                                n.parentNode.insertBefore(s, n);
+                            };
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                        if (w.opera == "[object Opera]") {
+                            d.addEventListener("DOMContentLoaded", f, false);
+                        } else {
+                            f();
+                        }
+                    })(document, window, "yandex_metrika_callbacks");
+                </script>
+                <noscript>
+                    <div><img src="https://mc.yandex.ru/watch/44311074" style="position:absolute; left:-9999px;"
+                              alt=""/>
+                    </div>
+                </noscript>
+                <!-- /Yandex.Metrika counter -->
+            </div>
         </div>
     </footer>
 

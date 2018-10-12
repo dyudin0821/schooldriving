@@ -23,6 +23,17 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = [field.name for field in News._meta.fields]
     search_fields = [search.name for search in News._meta.fields]
     list_filter = ['is_active']
+    actions = ['publish', 'hidden']
+
+    def publish(self, request, queryset):
+        queryset.update(is_active=True)
+
+    publish.short_description = "Опубликовать новость"
+
+    def hidden(self, request, queryset):
+        queryset.update(is_active=False)
+
+    hidden.short_description = "Скрыть новость"
 
     class Meta:
         model = Price

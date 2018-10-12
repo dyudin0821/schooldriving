@@ -3,8 +3,7 @@ $(document).ready(function () {
     map = new GMaps({
         el: '#map',
         // lat: 59.939002,
-        lat: 59.691789,
-        // lng: 30.315705,
+        lat: 59.939024,
         lng: 30.315733,
         zoom: 9
 

@@ -83,6 +83,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'db',
+#         'USER': 'db',
+#         'PASSWORD': 'pass',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -117,7 +128,7 @@ USE_L10N = True
 USE_TZ = True
 
 EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = 'alt4047000@yandex.ru'
 EMAIL_HOST_PASSWORD = '3\Y##DFG39^)'
 EMAIL_PORT = '465'
 EMAIL_USE_TLS = False
@@ -126,6 +137,7 @@ EMAIL_USE_SSL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 

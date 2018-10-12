@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="index,all" name="robots"/>
     <meta name="Keywords"
-          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, кировский район, петергоф, красносе"/>
+          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, петергоф, красносе село, парнас, просвещение"/>
     <meta name="Description"
           content="Альтернатива - автошкола в СПб. Курсы вождения легкового автомобиля - высокое качество, оптимальные сроки, реальные цены."/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,119 +112,53 @@
     <div class="news">
         <div class="container">
             <div class="row">
-
+                <div class="news_post_image">
+                    <img src="{% static 'images/news.png' %}" height="602" width="690"
+                         alt="https://unsplash.com/@dsmacinnes">
+                </div>
                 <!-- News Column -->
 
                 <div class="col-lg-9">
+                    {% for post in pages %}
+                        <div class="news_posts">
+                            <!-- News Post -->
+                            <div class="news_post">
+                                <div class="news_post_top d-flex flex-column flex-sm-row">
+                                    <div class="news_post_date_container">
+                                        <div class="news_post_date d-flex flex-column align-items-center justify-content-center">
+                                            <div>{{ post.data_news | date:"d"}}</div>
+                                            <div>{{ post.data_news | date:"M"}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="news_post_title_container">
+                                        <div class="news_post_title">
+                                            <a>{{ post.title }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news_post_text">
+                                    {{ post.text | safe }}
+                                </div>
+                                {#                                <div class="news_post_button text-center trans_200">#}
+                                {#                                    <a href="/news/post">Read More</a>#}
+                                {#                                </div>#}
+                            </div>
 
-                    <div class="news_posts">
-                        <!-- News Post -->
-                        <div class="news_post">
-                            <div class="news_post_image">
-                                <img src="{% static 'images/news_1.jpg' %}" alt="https://unsplash.com/@dsmacinnes">
-                            </div>
-                            <div class="news_post_top d-flex flex-column flex-sm-row">
-                                <div class="news_post_date_container">
-                                    <div class="news_post_date d-flex flex-column align-items-center justify-content-center">
-                                        <div>18</div>
-                                        <div>dec</div>
-                                    </div>
-                                </div>
-                                <div class="news_post_title_container">
-                                    <div class="news_post_title">
-                                        <a href="/news/post">Why do you need a qualification?</a>
-                                    </div>
-                                    <div class="news_post_meta">
-                                        <span class="news_post_author"><a href="#">By Christian Smith</a></span>
-                                        <span>|</span>
-                                        <span class="news_post_comments"><a href="#">3 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news_post_text">
-                                <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl
-                                    ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus
-                                    nec eros varius luctus. Praesent finibus risus facilisis ultricies.</p>
-                            </div>
-                            <div class="news_post_button text-center trans_200">
-                                <a href="/news/post">Read More</a>
-                            </div>
                         </div>
-
-                        <!-- News Post -->
-                        <div class="news_post">
-                            <div class="news_post_image">
-                                <img src="{% static 'images/news_2.jpg' %}" alt="https://unsplash.com/@dsmacinnes">
-                            </div>
-                            <div class="news_post_top d-flex flex-column flex-sm-row">
-                                <div class="news_post_date_container">
-                                    <div class="news_post_date d-flex flex-column align-items-center justify-content-center">
-                                        <div>18</div>
-                                        <div>dec</div>
-                                    </div>
-                                </div>
-                                <div class="news_post_title_container">
-                                    <div class="news_post_title">
-                                        <a href="/news/post">Our new courses just for you?</a>
-                                    </div>
-                                    <div class="news_post_meta">
-                                        <span class="news_post_author"><a href="#">By Christian Smith</a></span>
-                                        <span>|</span>
-                                        <span class="news_post_comments"><a href="#">3 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news_post_text">
-                                <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl
-                                    ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus
-                                    nec eros varius luctus. Praesent finibus risus facilisis ultricies.</p>
-                            </div>
-                            <div class="news_post_button text-center trans_200">
-                                <a href="/news/post">Read More</a>
-                            </div>
-                        </div>
-
-                        <!-- News Post -->
-                        <div class="news_post">
-                            <div class="news_post_image">
-                                <img src="{% static 'images/news_3.jpg' %}" alt="https://unsplash.com/@dsmacinnes">
-                            </div>
-                            <div class="news_post_top d-flex flex-column flex-sm-row">
-                                <div class="news_post_date_container">
-                                    <div class="news_post_date d-flex flex-column align-items-center justify-content-center">
-                                        <div>18</div>
-                                        <div>dec</div>
-                                    </div>
-                                </div>
-                                <div class="news_post_title_container">
-                                    <div class="news_post_title">
-                                        <a href="/news/post">Why take our graduate program??</a>
-                                    </div>
-                                    <div class="news_post_meta">
-                                        <span class="news_post_author"><a href="#">By Christian Smith</a></span>
-                                        <span>|</span>
-                                        <span class="news_post_comments"><a href="#">3 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news_post_text">
-                                <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl
-                                    ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus
-                                    nec eros varius luctus. Praesent finibus risus facilisis ultricies.</p>
-                            </div>
-                            <div class="news_post_button text-center trans_200">
-                                <a href="/news/post">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                     <!-- Page Nav -->
 
                     <div class="news_page_nav">
                         <ul>
-                            <li class="active text-center trans_200"><a href="#">01</a></li>
-                            <li class="text-center trans_200"><a href="#">02</a></li>
-                            <li class="text-center trans_200"><a href="#">03</a></li>
+                            {% for page in pages.paginator.page_range %}
+                                {% if page == pages.number %}
+                                    <li class="active text-center trans_200"><a href="/news/{{ page }}/">{{ page }}</a>
+                                    </li>
+                                {% else %}
+                                    <li class="text-center trans_200"><a href="/news/{{ page }}/">{{ page }}</a></li>
+                                {% endif %}
+                            {% endfor %}
                         </ul>
                     </div>
 
@@ -337,8 +271,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
                         <li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-            </div>
+                <!-- Yandex.Metrika counter -->
+                <script type="text/javascript">
+                    (function (d, w, c) {
+                        (w[c] = w[c] || []).push(function () {
+                            try {
+                                w.yaCounter44311074 = new Ya.Metrika({
+                                    id: 44311074,
+                                    clickmap: true,
+                                    trackLinks: true,
+                                    accurateTrackBounce: true
+                                });
+                            } catch (e) {
+                            }
+                        });
 
+                        var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function () {
+                                n.parentNode.insertBefore(s, n);
+                            };
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                        if (w.opera == "[object Opera]") {
+                            d.addEventListener("DOMContentLoaded", f, false);
+                        } else {
+                            f();
+                        }
+                    })(document, window, "yandex_metrika_callbacks");
+                </script>
+                <noscript>
+                    <div><img src="https://mc.yandex.ru/watch/44311074" style="position:absolute; left:-9999px;"
+                              alt=""/>
+                    </div>
+                </noscript>
+                <!-- /Yandex.Metrika counter -->
+            </div>
         </div>
     </footer>
 

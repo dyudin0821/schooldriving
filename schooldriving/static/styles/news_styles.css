@@ -767,7 +767,7 @@ section
 }
 .news_post_image
 {
-	width: 100%;
+	width: 50%;
 }
 .news_post_image img
 {
@@ -849,6 +849,9 @@ section
 .news_post_text
 {
 	margin-top: 27px;
+}
+.news_post_text p {
+	color: black;
 }
 .news_post_button
 {

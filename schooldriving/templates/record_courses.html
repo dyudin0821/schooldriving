@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="index,all" name="robots"/>
     <meta name="Keywords"
-          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, петергоф, красносе"/>
+          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, петергоф, красносе село, парнас, просвещение"/>
     <meta name="Description"
           content="Альтернатива - автошкола в СПб. Курсы вождения легкового автомобиля - высокое качество, оптимальные сроки, реальные цены."/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -144,7 +144,7 @@
                                        data-error="Valid phone is required.">
                                 <select class="input_field" name="category">
                                     {% for cat in category %}
-                                    <option value="{{ cat.name }}">{{ cat.name  }}</option>
+                                        <option value="{{ cat.name }}">{{ cat.name }}</option>
                                     {% endfor %}
                                 </select>
                                 <select class="input_field" name="branch">
@@ -267,6 +267,43 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
                         <li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
+                <!-- Yandex.Metrika counter -->
+                <script type="text/javascript">
+                    (function (d, w, c) {
+                        (w[c] = w[c] || []).push(function () {
+                            try {
+                                w.yaCounter44311074 = new Ya.Metrika({
+                                    id: 44311074,
+                                    clickmap: true,
+                                    trackLinks: true,
+                                    accurateTrackBounce: true
+                                });
+                            } catch (e) {
+                            }
+                        });
+
+                        var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function () {
+                                n.parentNode.insertBefore(s, n);
+                            };
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                        if (w.opera == "[object Opera]") {
+                            d.addEventListener("DOMContentLoaded", f, false);
+                        } else {
+                            f();
+                        }
+                    })(document, window, "yandex_metrika_callbacks");
+                </script>
+                <noscript>
+                    <div><img src="https://mc.yandex.ru/watch/44311074" style="position:absolute; left:-9999px;"
+                              alt=""/>
+                    </div>
+                </noscript>
+                <!-- /Yandex.Metrika counter -->
             </div>
 
         </div>
@@ -292,10 +329,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
     $(document).ready(function () {
         map = new GMaps({
             el: '#map',
-            lat: 59.835889,
-            // lng: 30.006869,
-            lng: 29.900,
-            zoom: 10
+            lat: 59.939024,
+            lng: 30.315733,
+            zoom: 9
 
         });
         map.addMarker({

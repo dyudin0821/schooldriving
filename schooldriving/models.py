@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils import timezone
@@ -58,8 +59,8 @@ class Tagline(models.Model):
 
 class News(models.Model):
     title = models.CharField('Заголовок', max_length=300,)
-    text = RichTextField('Текст', default=None)
-    data_news = models.DateTimeField('Дата', default=timezone.now)
+    text = RichTextUploadingField('Текст', default=None)
+    data_news = models.DateField('Дата', auto_now=True)
     is_active = models.BooleanField('Активен:', default=True)
 
     def __str__(self):

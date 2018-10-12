@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>АЛЬТЕРНАТИВА - автошкола СПб, курсы вождения</title>
+    <title>Филиалы АЛЬТЕРНАТИВА - автошкола СПб, курсы вождения</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="index,all" name="robots"/>
     <meta name="Keywords"
-          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, петергоф, красносе"/>
+          content="автошкола альтернатива, автошкола, автошкола спб, курсы вождения, сдать на права, обучение в автошколе, петергоф, красносе село, парнас, просвещение"/>
     <meta name="Description"
           content="Альтернатива - автошкола в СПб. Курсы вождения легкового автомобиля - высокое качество, оптимальные сроки, реальные цены."/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -135,13 +135,13 @@
                                         </div>
                                         <a href="tel://{{ branch.phone }}">{{ branch.phone }}</a>
                                     </li>
-                                    <li class="contact_info_item">
-                                        <div class="contact_info_icon">
-                                            <img src="{% static 'images/envelope.svg' %}"
-                                                 alt="https://www.flaticon.com/authors/lucy-g">
-                                        </div>
-                                        hello@company.com
-                                    </li>
+{#                                    <li class="contact_info_item">#}
+{#                                        <div class="contact_info_icon">#}
+{#                                            <img src="{% static 'images/envelope.svg' %}"#}
+{#                                                 alt="https://www.flaticon.com/authors/lucy-g">#}
+{#                                        </div>#}
+{#                                        hello@company.com#}
+{#                                    </li>#}
                                     <li>
                                         <div class="button button_1 register_button_branch mx-auto "><a
                                                 href="/classes/{{ branch.url }}/">Записаться</a>
@@ -158,7 +158,7 @@
             <!-- Google Map -->
 
             <div class="row">
-                <div class="col">
+                <div class="col-lg-12">
                     <div id="google_maps">
                         <div class="map_container">
                             <div id="map"></div>
@@ -259,8 +259,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
                         <li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-            </div>
+                <!-- Yandex.Metrika counter -->
+                <script type="text/javascript">
+                    (function (d, w, c) {
+                        (w[c] = w[c] || []).push(function () {
+                            try {
+                                w.yaCounter44311074 = new Ya.Metrika({
+                                    id: 44311074,
+                                    clickmap: true,
+                                    trackLinks: true,
+                                    accurateTrackBounce: true
+                                });
+                            } catch (e) {
+                            }
+                        });
 
+                        var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function () {
+                                n.parentNode.insertBefore(s, n);
+                            };
+                        s.type = "text/javascript";
+                        s.async = true;
+                        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                        if (w.opera == "[object Opera]") {
+                            d.addEventListener("DOMContentLoaded", f, false);
+                        } else {
+                            f();
+                        }
+                    })(document, window, "yandex_metrika_callbacks");
+                </script>
+                <noscript>
+                    <div><img src="https://mc.yandex.ru/watch/44311074" style="position:absolute; left:-9999px;"
+                              alt=""/>
+                    </div>
+                </noscript>
+                <!-- /Yandex.Metrika counter -->
+            </div>
         </div>
     </footer>
 
@@ -278,7 +314,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 {#<script src="{% static 'js/contact_custom.js' %}"></script>#}
 <script src="{% static 'js/gmaps.js' %}"></script>
-<script src="{% static 'js/maps.js' %}"></script>
+<script src="{% static 'js/maps_cl.js' %}"></script>
 
 </body>
 </html>
