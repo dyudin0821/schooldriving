@@ -82,3 +82,7 @@ def news_post(request, post):
 def get_confidential(request):
     return render(request, 'confidential.html', locals())
 
+
+def contacts(request):
+    return render(request, 'contacts.html', locals())
+

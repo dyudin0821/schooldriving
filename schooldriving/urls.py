@@ -22,12 +22,13 @@ from . import views
 urlpatterns = [
     re_path(r'^$', views.index),
     path('news/', views.news, name='news'),
-    path('news/<int:page_number>/',views.news, name='news'),
+    path('news/<int:page_number>/', views.news, name='news'),
     re_path('news/post/(?P<post>[0-9]+)/$', views.news_post, name='post'),
     path('teachers/', views.teachers, name='teachers'),
     path('classes/', views.classes, name='classes'),
     path('classes/<branch>/', views.form_record, name='form'),
     path('add_order/', views.add_order, name='add_order'),
     path('confidential/', views.get_confidential, name='confidential'),
+    path('contacts/', views.contacts, name='confidential'),
 
 ]

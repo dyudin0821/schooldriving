@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>АЛЬТЕРНАТИВА - автошкола СПб, курсы вождения</title>
+    <title>Филиалы АЛЬТЕРНАТИВА - автошкола СПб, курсы вождения</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="index,all" name="robots"/>
     <meta name="Keywords"
@@ -12,7 +12,7 @@
     <meta name="description" content="АЛЬТЕРНАТИВА Автошкола">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="shortcut icon" href="{%  static 'images/favicon.ico' %} ">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %} ">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
     <link href="{% static 'plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/contact_styles.css' %}">
@@ -42,7 +42,7 @@
                     <ul class="main_nav_list">
                         <li class="main_nav_item"><a href="/">О Нас</a></li>
                         <li class="main_nav_item"><a href="/classes">Филиалы</a></li>
-                        <li class="main_nav_item"><a href="#course">Обучение</a></li>
+                        <li class="main_nav_item"><a href="/#course">Обучение</a></li>
                         <li class="main_nav_item"><a href="/news">Новости</a></li>
                         {#                        <li class="main_nav_item"><a href="elements.html">elements</a></li>#}
                         <li class="main_nav_item"><a href="/contacts">Контакты</a></li>
@@ -105,7 +105,7 @@
                  style="background-image:url({% static 'images/news_background.jpg' %})"></div>
         </div>
         <div class="home_content">
-            <h1>{{ branch_name }}</h1>
+            <h1>АВТОШКОЛА «Альтернатива»</h1>
         </div>
     </div>
 
@@ -114,60 +114,92 @@
     <div class="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 alert alert-warning hidden">
-                    Ваша заявка добавлена. Ожидайте звонка от администратора
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8">
-                    <p>{{ branches.address }}</p>
-                    <p><a href="tel://{{ branches.phone }}">{{ branches.phone }}</a></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Contact Form -->
-                    <div class="contact_form">
-                        <div class="contact_title">ЗАПИСАТЬСЯ ОНЛАЙН</div>
+                <div class="col-lg-9">
+                    <div class="about">
+                        <div class="about_title text-center">РЕКВИЗИТЫ</div>
+                        <div class="about_title_h1 text-center"> Санкт-Петербург, г.Петергоф, Санкт-Петербургский пр., 60, 4
+                                    этаж, офис №431</div>
+                        <div class="about_title_h1 text-center">+7 (812) 956-2975</div>
+                        <p class="about_text"></p>
 
-                        <div class="contact_form_container">
-                            <form id="add-order" action="{% url 'add_order' %}" method="POST">
-                                {% csrf_token %}
-
-                                <input type="email" name="email" class="input_field"
-                                       placeholder="Адрес электронной почты" required="required"
-                                       data-error="Valid email is required.">
-                                <input type="text" name="full_name" class="input_field "
-                                       placeholder="Имя" required="required"
-                                       data-error="Valid phone is required.">
-                                <input type="tel" name="phone" class="input_field "
-                                       placeholder="Телефон для связи" required="required"
-                                       data-error="Valid phone is required.">
-                                <select class="input_field" name="category">
-                                    {% for cat in category %}
-                                        <option value="{{ cat.name }}">{{ cat.name }}</option>
-                                    {% endfor %}
-                                </select>
-                                <select class="input_field" name="branch">
-                                    <option value="{{ branch_name }}">{{ branch_name }}</option>
-                                </select>
-                                <button name="contact_send_btn" type="submit" class="contact_send_btn trans_200"
-                                        value="Submit">Отправить
-                                </button>
-                                <div style="text-align:center;">
-                                    <small>Нажимая на кнопку «Отправить» Вы даёте согласие на обработку Ваших <a
-                                            href="/confidential">персональных данных</a>.
-                                    </small>
-                                </div>
-                            </form>
+                        <div class="contact_info">
+                            <ul>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    ОБЩЕСТВО С ОГРАНИЧЕННОЙ
+                                    ОТВЕТСТВЕННОСТЬЮ "АЛЬТЕРНАТИВА"
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    Юридический адрес: 198261, город Санкт-Петербург, улица Бурцева, 23 литер а, помещение 11н
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    Почтовый адрес: 198510, Санкт-Петербург, г.Петергоф, Санкт-Петербургский пр., 60, 4
+                                    этаж, офис №431
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    ОРГН: 1117847483346 от 9 ноября 2011 г.
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    ИНН: 7805569508
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    КПП: 780501001
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    ОКПО: 30673423
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    БИК: 044030786
+                                </li>
+                                <li class="contact_info_item">
+                                    <div class="contact_info_icon">
+                                        <img src="{% static 'images/traffic-cone.svg' %}"
+                                             alt="https://www.flaticon.com/authors/lucy-g">
+                                    </div>
+                                    <a href="tel://+7 (812) 404-7000">+7 (812) 404-7000</a>
+                                </li>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
+
             <!-- Google Map -->
 
             <div class="row">
-                <div class="col">
+                <div class="col-lg-12">
                     <div id="google_maps">
                         <div class="map_container">
                             <div id="map"></div>
@@ -306,7 +338,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
                 </noscript>
                 <!-- /Yandex.Metrika counter -->
             </div>
-
         </div>
     </footer>
 
@@ -322,29 +353,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
 <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
 <script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
-<script src="{% static 'js/script.js' %}"></script>
-{#<script src="{% static 'js/contact_custom.js' %}"></script>#}
 <script src="{% static 'js/gmaps.js' %}"></script>
-<script type="text/javascript">
-    let map;
-    $(document).ready(function () {
-        map = new GMaps({
-            el: '#map',
-            lat: 59.939024,
-            lng: 30.315733,
-            zoom: 9
-
-        });
-        map.addMarker({
-            lat: {{ branches.lat }},
-            lng: {{ branches.lng }},
-            title: 'автошкола "Альтернатива"',
-            infoWindow: {
-                content: '<p>Aвтошкола "Альтернатива"<br> Обучение водителей категорий "А" и "В"<br>{{ branches.address }}<br><a href="tel://{{ branches.phone }}">тел.:{{ branches.phone }}</a> </p>'
-            }
-        });
-    });
-</script>
+<script src="{% static 'js/contact.js' %}"></script>
 
 </body>
 </html>

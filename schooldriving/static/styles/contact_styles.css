@@ -839,11 +839,16 @@ section {
 .about {
     margin-top: 50px;
     color: black;
-    margin-bottom: 120px;
+    /*margin-bottom: 50px;*/
 }
 
 .about_title {
     font-size: 36px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+.about_title_h1 {
+    font-size: 30px;
     font-weight: 500;
     color: #1a1a1a;
 }
@@ -925,6 +930,9 @@ section {
 
 .footer .section_title h1 {
     color: #FFFFFF;
+}
+.footer_col p {
+    color: #a5a5a5;
 }
 
 /*********************************
