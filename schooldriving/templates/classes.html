@@ -118,7 +118,10 @@
                     <div class="col-lg-8">
                         <div class="about">
                             <div class="about_title">{{ branch.name }}</div>
-                            <p class="about_text">{{ branch.description | default:'' | safe }}</p>
+{#                            <p class="about_text">{{ branch.description | default:'' | safe }}</p>#}
+                            <div class="about_text">
+                                {{ branch.description | default:'' | safe }}
+                            </div>
 
                             <div class="contact_info">
                                 <ul>
@@ -136,14 +139,6 @@
                                         </div>
                                         <a href="tel://{{ branch.phone }}">{{ branch.phone }}</a>
                                     </li>
-                                    {#                                    <li class="contact_info_item">#}
-                                    {#                                        <div class="contact_info_icon">#}
-                                    {#                                            <img src="{% static 'images/envelope.svg' %}"#}
-                                    {#                                                 alt="https://www.flaticon.com/authors/lucy-g">#}
-                                    {#                                        </div>#}
-                                    {#                                        hello@company.com#}
-                                    {#                                    </li>#}
-                                    <li>
                                         <div class="button button_1 register_button_branch mx-auto "><a
                                                 href="/classes/{{ branch.url }}/">Записаться</a>
                                         </div>

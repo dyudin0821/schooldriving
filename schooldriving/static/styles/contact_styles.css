@@ -818,7 +818,7 @@ section {
     background: #1a1a1a;
     position: absolute;
 
-    margin-top: 25px;
+    margin-top: 0px;
     margin-left: 0px !important;
     color: white;
 }
@@ -854,13 +854,15 @@ section {
 }
 
 .about_text {
+    display: block;
     margin-top: 20px;
     color: black;
 }
 
 .contact_info {
-    margin-top: 64px;
+    margin-top: 50px;
     padding-left: 46px;
+    margin-bottom: 80px;
 
 }
 
@@ -869,7 +871,7 @@ section {
     font-weight: 400;
     /*color: #a5a5a5;*/
     color: black;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 .contact_info_item a {
