@@ -6,6 +6,20 @@ from django.utils import timezone
 # Create your models here.
 
 
+class About(models.Model):
+    title = models.CharField('Заголовок', max_length=250)
+    text = RichTextUploadingField('Текст', default=None)
+    icons = models.ImageField('Иконка', upload_to='home_page/',)
+    is_active = models.BooleanField('Активен:', default=True)
+
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        verbose_name = 'Информация'
+        verbose_name_plural = 'Информация'
+
+
 class Branches(models.Model):
     name = models.CharField('Название филиала:', max_length=500)
     address = models.CharField('Адрес филиала:', max_length=500)

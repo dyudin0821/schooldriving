@@ -71,10 +71,26 @@ class OrdersAdmin(admin.ModelAdmin):
         model = Orders
 
 
+class AboutAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in About._meta.fields]
+    search_fields = [search.name for search in About._meta.fields]
+    list_filter = ['is_active']
+    actions = ['processed']
+
+    def processed(self, request, queryset):
+        queryset.update(is_processed=True)
+
+    processed.short_description = "Изменить состояние"
+
+    class Meta:
+        model = About
+
+
 admin.site.register(Branches, BranchesAdmin)
 admin.site.register(Tagline)
 admin.site.register(Price, PricesAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Teachers, TeachersAdmin)
-admin.site.register(Contacts,ContactsAdmin)
-admin.site.register(Orders,OrdersAdmin)
+admin.site.register(Contacts, ContactsAdmin)
+admin.site.register(Orders, OrdersAdmin)
+admin.site.register(About, AboutAdmin)

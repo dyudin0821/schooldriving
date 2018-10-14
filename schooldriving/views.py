@@ -15,6 +15,7 @@ def index(request):
     taglines = Tagline.objects.filter(is_active=True)
     price = Price.objects.filter(is_active=True)
     branches = Branches.objects.filter(is_active=True)
+    about = About.objects.filter(is_active=True)
     return render(request, 'index.html', locals())
 
 
