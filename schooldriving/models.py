@@ -6,7 +6,7 @@ from django.utils import timezone
 # Create your models here.
 
 
-class About(models.Model):
+class Information(models.Model):
     title = models.CharField('Заголовок', max_length=250)
     text = RichTextUploadingField('Текст', default=None)
     icons = models.ImageField('Иконка', upload_to='home_page/',)
@@ -133,4 +133,16 @@ class Orders(models.Model):
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
 
+
+class About(models.Model):
+    title = models.CharField('Заголовок:', max_length=500)
+    text = RichTextUploadingField('Текст', default=None)
+    is_active = models.BooleanField('Активен:', default=True)
+
+    def __str__(self):
+        return '%s' % self.title
+
+    class Meta:
+        verbose_name = 'Реквизиты'
+        verbose_name_plural = 'Реквизиты'
 

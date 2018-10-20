@@ -114,86 +114,15 @@
     <div class="contact">
         <div class="container">
             <div class="row">
+                {% for info in about %}
                 <div class="col-lg-9">
                     <div class="about">
-                        <div class="about_title text-center">РЕКВИЗИТЫ</div>
-                        <div class="about_title_h1 text-center"> Санкт-Петербург, г.Петергоф, Санкт-Петербургский пр., 60, 4
-                                    этаж, офис №431</div>
-                        <div class="about_title_h1 text-center">+7 (812) 956-2975</div>
-                        <p class="about_text"></p>
-
-                        <div class="contact_info">
-                            <ul>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    ОБЩЕСТВО С ОГРАНИЧЕННОЙ
-                                    ОТВЕТСТВЕННОСТЬЮ "АЛЬТЕРНАТИВА"
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    Юридический адрес: 198261, город Санкт-Петербург, улица Бурцева, 23 литер а, помещение 11н
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    Почтовый адрес: 198510, Санкт-Петербург, г.Петергоф, Санкт-Петербургский пр., 60, 4
-                                    этаж, офис №431
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    ОРГН: 1117847483346 от 9 ноября 2011 г.
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    ИНН: 7805569508
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    КПП: 780501001
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    ОКПО: 30673423
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    БИК: 044030786
-                                </li>
-                                <li class="contact_info_item">
-                                    <div class="contact_info_icon">
-                                        <img src="{% static 'images/traffic-cone.svg' %}"
-                                             alt="https://www.flaticon.com/authors/lucy-g">
-                                    </div>
-                                    <a href="tel://+7 (812) 404-7000">+7 (812) 404-7000</a>
-                                </li>
-                            </ul>
+                        <div class="about_title text-center">{{ info.title }}</div>
+                        {{ info.text | safe }}
                         </div>
-
                     </div>
                 </div>
+                {% endfor %}
             </div>
 
             <!-- Google Map -->

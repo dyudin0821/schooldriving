@@ -15,7 +15,7 @@ def index(request):
     taglines = Tagline.objects.filter(is_active=True)
     price = Price.objects.filter(is_active=True)
     branches = Branches.objects.filter(is_active=True)
-    about = About.objects.filter(is_active=True)
+    information = Information.objects.filter(is_active=True)
     return render(request, 'index.html', locals())
 
 
@@ -85,5 +85,6 @@ def get_confidential(request):
 
 
 def contacts(request):
+    about = About.objects.filter(id=1, is_active=True)
     return render(request, 'contacts.html', locals())
 
