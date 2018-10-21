@@ -32,6 +32,7 @@ def classes(request):
 def form_record(request, branch):
     branches = Branches.objects.get(url=branch)
     category = Price.objects.all()
+    price = Price.objects.filter(is_active=True)
     branch_name = branches.name
     return render(request, 'record_courses.html', locals())
 

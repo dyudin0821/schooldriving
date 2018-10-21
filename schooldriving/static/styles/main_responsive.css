@@ -159,6 +159,14 @@
 	.hamburger_container
 	{
 		display: block;
+    }
+    .about
+	{
+		margin-top: 80px;
+	}
+	#google_map
+	{
+		height: 331px;
 	}
 	.hero_slide_content h1
 	{
@@ -338,6 +346,33 @@
 	{
 		right: 30px;
 		top: 34px;
+    }
+    .home
+	{
+		height: 372px;
+    }
+    .home_contact
+	{
+		height: 372px;
+	}
+	.home_content
+	{
+		padding-top: 17px;
+	    padding-bottom: 11px;
+	    padding-left: 22px;
+	    padding-right: 24px;
+	}
+	.home_content h1
+	{
+		font-size: 23px;
+	}
+	.contact_info
+	{
+		padding-left: 0px;
+	}
+	#google_map
+	{
+		height: calc((100vw - 30px) / 2.08);
 	}
 	.hero_slider_nav
 	{

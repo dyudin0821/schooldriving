@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+import copy
 
 # Register your models here.
 
@@ -23,7 +24,7 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = [field.name for field in News._meta.fields]
     search_fields = [search.name for search in News._meta.fields]
     list_filter = ['is_active']
-    actions = ['publish', 'hidden']
+    actions = ['publish', 'hidden', 'copy']
 
     def publish(self, request, queryset):
         queryset.update(is_active=True)
@@ -34,6 +35,15 @@ class NewsAdmin(admin.ModelAdmin):
         queryset.update(is_active=False)
 
     hidden.short_description = "Скрыть новость"
+
+    def copy(self, request, queryset):
+        for news in queryset:
+            news_copy = copy.copy(news)
+            news_copy.id = None
+            news_copy.is_active = False
+            news_copy.save()
+
+    copy.short_description = "Копировать"
 
     class Meta:
         model = Price
@@ -104,3 +114,4 @@ admin.site.register(Contacts, ContactsAdmin)
 admin.site.register(Orders, OrdersAdmin)
 admin.site.register(Information, InformAdmin)
 admin.site.register(About, AboutAdmin)
+admin.site.site_header = 'Администрирование сайта Альтернатива'

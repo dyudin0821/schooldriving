@@ -12,11 +12,11 @@
     <meta name="description" content="АЛЬТЕРНАТИВА Автошкола">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="shortcut icon" href="{%  static 'images/favicon.ico' %} ">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %} ">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
     <link href="{% static 'plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/contact_styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/contact_responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_responsive.css' %}">
     <script type="text/javascript" async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2PRGhX8JtUtV7hWqFQKO1tRykjTpdkKc"></script>
 </head>
@@ -99,7 +99,7 @@
 
     <!-- Home -->
 
-    <div class="home">
+    <div class="home_contact">
         <div class="home_background_container prlx_parent">
             <div class="home_background prlx"
                  style="background-image:url({% static 'images/news_background.jpg' %})"></div>
@@ -120,8 +120,14 @@
             </div>
             <div class="row">
                 <div class="col-lg-8">
-                    <p>{{ branches.address }}</p>
-                    <p><a href="tel://{{ branches.phone }}">{{ branches.phone }}</a></p>
+                    <div class="branches">
+                        <p>{{ branches.address }}</p>
+                        <p><a href="tel://{{ branches.phone }}">{{ branches.phone }}</a></p>
+                        {% for pr in price %}
+                            <p>{{ pr.name }}</p>
+                            <p>{{ pr.price }} рублей</p>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -134,21 +140,21 @@
                             <form id="add-order" action="{% url 'add_order' %}" method="POST">
                                 {% csrf_token %}
 
-                                <input type="email" name="email" class="input_field"
+                                <input type="email" name="email" class="input_field_form"
                                        placeholder="Адрес электронной почты" required="required"
                                        data-error="Valid email is required.">
-                                <input type="text" name="full_name" class="input_field "
+                                <input type="text" name="full_name" class="input_field_form"
                                        placeholder="Имя" required="required"
                                        data-error="Valid phone is required.">
-                                <input type="tel" name="phone" class="input_field "
+                                <input type="tel" name="phone" class="input_field_form"
                                        placeholder="Телефон для связи" required="required"
                                        data-error="Valid phone is required.">
-                                <select class="input_field" name="category">
+                                <select class="input_field_form" name="category">
                                     {% for cat in category %}
                                         <option value="{{ cat.name }}">{{ cat.name }}</option>
                                     {% endfor %}
                                 </select>
-                                <select class="input_field" name="branch">
+                                <select class="input_field_form" name="branch">
                                     <option value="{{ branch_name }}">{{ branch_name }}</option>
                                 </select>
                                 <button name="contact_send_btn" type="submit" class="contact_send_btn trans_200"
@@ -241,13 +247,13 @@
                                     </div>
                                     +7 (812) 404-7000
                                 </li>
-{#                                <li class="footer_contact_item">#}
-{#                                    <div class="footer_contact_icon">#}
-{#                                        <img src="{% static 'images/envelope.svg' %}"#}
-{#                                             alt="https://www.flaticon.com/authors/lucy-g">#}
-{#                                    </div>#}
-{#                                    hello@404-7000.ru#}
-{#                                </li>#}
+                                {#                                <li class="footer_contact_item">#}
+                                {#                                    <div class="footer_contact_icon">#}
+                                {#                                        <img src="{% static 'images/envelope.svg' %}"#}
+                                {#                                             alt="https://www.flaticon.com/authors/lucy-g">#}
+                                {#                                    </div>#}
+                                {#                                    hello@404-7000.ru#}
+                                {#                                </li>#}
                             </ul>
                         </div>
                     </div>
