@@ -46,7 +46,7 @@ class NewsAdmin(admin.ModelAdmin):
     copy.short_description = "Копировать"
 
     class Meta:
-        model = Price
+        model = News
 
 
 class TeachersAdmin(admin.ModelAdmin):
