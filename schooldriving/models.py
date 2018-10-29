@@ -75,6 +75,7 @@ class News(models.Model):
     title = models.CharField('Заголовок', max_length=300,)
     text = RichTextUploadingField('Текст', default=None)
     data_news = models.DateField('Дата', auto_now=True)
+    priority = models.IntegerField('Приоритет новости', default=1)
     is_active = models.BooleanField('Активен:', default=True)
 
     def __str__(self):
