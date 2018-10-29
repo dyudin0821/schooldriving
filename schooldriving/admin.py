@@ -4,6 +4,7 @@ import copy
 
 # Register your models here.
 
+
 class BranchesAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Branches._meta.fields]
     search_fields = [search.name for search in Branches._meta.fields]
