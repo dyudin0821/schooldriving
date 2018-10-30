@@ -90,7 +90,7 @@ class InformAdmin(admin.ModelAdmin):
     actions = ['processed']
 
     def processed(self, request, queryset):
-        queryset.update(is_processed=True)
+        queryset.update(is_active=True)
 
     processed.short_description = "Изменить состояние"
 
