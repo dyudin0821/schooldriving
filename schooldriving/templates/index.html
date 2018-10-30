@@ -183,13 +183,13 @@
             <div class="row course_boxes">
 
                 <!-- Popular Course Item -->
-                {% for item in price %}
+                {% for item in studying_program  %}
                     <div class="col-lg-6 course_box">
                         <div class="card">
                             <img class="card-img-top" src="{{ item.image.url }}">
                             <div class="card-body text-center">
                                 <div class="card-title"><a href="#">{{ item.name }}</a></div>
-                                <div class="card-text">{{ item.description }}</div>
+                                <div class="card-text">{{ item.description}}</div>
                             </div>
                             <div class="price_box d-flex flex-row align-items-center">
                                 <div class="button button_1 register_button_curs "><a href="/classes/"

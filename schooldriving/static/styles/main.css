@@ -998,6 +998,7 @@ section {
     display: block;
     background: #f8f9fb;
     border: none;
+    margin-bottom: 50px;
 }
 
 .card-img-top {

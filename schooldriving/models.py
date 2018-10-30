@@ -51,8 +51,8 @@ class Price(models.Model):
         return '%s' % self.name
 
     class Meta:
-        verbose_name = 'Цену'
-        verbose_name_plural = 'Цены'
+        verbose_name = 'Программа обучения'
+        verbose_name_plural = 'Программы обучения'
 
 
 class Tagline(models.Model):
