@@ -30,6 +30,7 @@ $(document).ready(function()
 	var hambActive = false;
 	var menuActive = false;
 	var ctrl = new ScrollMagic.Controller();
+	var numItems = $('.course_box').length;
 
 	setHeader();
 
@@ -43,6 +44,7 @@ $(document).ready(function()
 		setHeader();
 	});
 
+	lastCourseBox();
 	initHeroSlider();
 	initSvg();
 	initHamburger();
@@ -325,4 +327,11 @@ $(document).ready(function()
 			});
 		}
 	}
+
+
+	function lastCourseBox() {
+        if (numItems % 2 > 0) {
+            $('.course_box').last().addClass("offset-3");
+        }
+    }
 });

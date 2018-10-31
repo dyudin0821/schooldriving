@@ -189,7 +189,7 @@
                             <img class="card-img-top" src="{{ item.image.url }}">
                             <div class="card-body text-center">
                                 <div class="card-title"><a href="/classes/">{{ item.name }}</a></div>
-                                <div class="card-text">{{ item.description}}</div>
+                                <div class="card-text">{{ item.description |  default:""}}</div>
                             </div>
                             <div class="price_box d-flex flex-row align-items-center">
                                 <div class="button button_1 register_button_curs "><a href="/classes/"

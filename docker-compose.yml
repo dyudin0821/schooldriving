@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.2'
 
 services:
   db:
@@ -8,12 +8,11 @@ services:
     ports:
     - "5432:5432"
     environment:
-      POSTGRES_PASSWORD:
-      POSTGRES_USER: 
-      POSTGRES_DB: schooldriving
+      POSTGRES_PASSWORD: ''
+      POSTGRES_USER: ''
+      POSTGRES_DB: ''
     volumes:
-    - data:/data
-    - mycustom.cnf:/etc/mysql/conf.d/custom.cnf
+    - data:/var/lib/postgresql/data
     restart: always
 
 volumes:

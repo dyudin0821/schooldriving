@@ -199,6 +199,7 @@
 	.course_box
 	{
 		margin-bottom: 80px;
+		margin-left: 0;
 	}
 	.course_box:last-child
 	{
