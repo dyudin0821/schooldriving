@@ -84,14 +84,14 @@ DATABASES = {
 }
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'db',
-#         'USER': 'db',
-#         'PASSWORD': 'pass',
-#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-#         'PORT': '3306',
-#     }
+#      'default': {
+#          'ENGINE': 'django.db.backends.postgresql',
+#          'NAME': 'name',
+#          'USER': 'user',
+#          'PASSWORD': 'pass',
+#          'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#          'PORT': '5432',
+#      }
 # }
 
 

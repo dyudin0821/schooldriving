@@ -69,7 +69,7 @@ class ContactsAdmin(admin.ModelAdmin):
 
 class OrdersAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Orders._meta.fields]
-    # search_fields = [search.name for search in Orders._meta.fields]
+    # search_fields = [f.name for f in Orders._meta.get_fields()]
     search_fields = ['name', 'email', 'phone', ]
     list_filter = ['is_processed', 'branch', 'category']
     actions = ['processed']

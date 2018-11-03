@@ -32,6 +32,7 @@ $(document).ready(function()
 	var ctrl = new ScrollMagic.Controller();
 	var numItems = $('.course_box').length;
 
+	lastCourseBox();
 	setHeader();
 
 	$(window).on('resize', function()
@@ -44,7 +45,6 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	lastCourseBox();
 	initHeroSlider();
 	initSvg();
 	initHamburger();
