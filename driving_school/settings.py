@@ -25,7 +25,7 @@ SECRET_KEY = 'a78p@%$1pb+e)g$8e8gyuuuii19z-tx2@u_&&t=o(*#e^d#%wr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['schooldriving.ru', '127.0.0.1', '195.201.141.70']
 
 
 # Application definition
@@ -128,8 +128,8 @@ USE_L10N = True
 USE_TZ = True
 
 EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'alt4047000@yandex.ru'
-EMAIL_HOST_PASSWORD = '3\Y##DFG39^)'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = '465'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
