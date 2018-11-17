@@ -491,7 +491,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
 <script src="{% static 'js/custom.js' %}"></script>
 <script src="{% static 'js/maps.js' %}"></script>
 
-<script  src="//vk.com/js/api/openapi.js?159" async onload="VK.Widgets.Group('vk_groups', {mode: 3, width: '600', color3: '000000'}, 9816344);"></script>
+<script type="text/javascript">
+    function asyncVk() {
+        VK.Widgets.Group('vk_groups', {mode: 3, width: '600', color3: '000000'}, 9816344);
+    }
+</script>
+
+<script defer async onload="asyncVk();" type="text/javascript" src="//vk.com/js/api/openapi.js?159"></script>
 
 </body>
 </html>
