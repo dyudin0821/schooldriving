@@ -16,14 +16,16 @@ $('#add-order').submit(function (event) {
             $(".alert").slideDown();
             setTimeout(function () {
                 $(".alert").slideUp();
-            }, 3000);
+            }, 5000);
 
 
         },
         error: function (response) {
-            console.log(response);
-            // bootbox.alert('Error, server cant be appended')
-            // alert(response.responseJSON.error);
+            form.reset();
+            $(".alert").text(response.responseText).slideDown();
+            setTimeout(function () {
+                $(".alert").slideUp();
+            }, 5000);
         },
     });
 

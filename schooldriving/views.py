@@ -47,21 +47,22 @@ def add_order(request):
         category = Price.objects.get(name=cat)
         filial = Branches.objects.get(name=branch)
         contact = Contacts.objects.get(id=filial.id)
-        order = Orders(name=name, email=email, phone=phone, branch=filial, category=category)
-        order.save()
-        sbj = 'Внимание! Новая заявка от %s; Номер телефона: %s' % (name, phone)
-        msg = "Новая заявка с сайта\n" \
-              "%s желает записаться на %s в филиале %s\n" \
-              "------- Данные клиента -------\n" \
-              "Имя: %s\n" \
-              "Телефон: %s\n" \
-              "E-mail: %s\n" \
-              % (name, cat, branch, name, phone, email)
-        send_mail(sbj, msg, settings.EMAIL_HOST_USER, [contact.admin_email])
-        return JsonResponse({'location': '/'})
+        if Orders.objects.filter(email=email).exists():
+            return HttpResponse('Заявка была создана ранее. Ожидайте звонка', status=520)
+        else:
+            order = Orders(name=name, email=email, phone=phone, branch=filial, category=category)
+            order.save()
+            sbj = 'Внимание! Новая заявка от %s; Номер телефона: %s' % (name, phone)
+            msg = "Новая заявка с сайта\n" \
+                  "%s желает записаться на %s в филиале %s\n" \
+                  "------- Данные клиента -------\n" \
+                  "Имя: %s\n" \
+                  "Телефон: %s\n" \
+                  "E-mail: %s\n" \
+                  % (name, cat, branch, name, phone, email)
+            send_mail(sbj, msg, settings.EMAIL_HOST_USER, [contact.admin_email])
+            return JsonResponse({'location': '/'})
     else:
-        get = request.GET
-        print(get)
         return HttpResponse('Error')
 
 
