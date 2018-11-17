@@ -183,13 +183,13 @@
             <div class="row course_boxes">
 
                 <!-- Popular Course Item -->
-                {% for item in studying_program  %}
+                {% for item in studying_program %}
                     <div class="col-lg-6 course_box">
                         <div class="card">
                             <img class="card-img-top" src="{{ item.image.url }}">
                             <div class="card-body text-center">
                                 <div class="card-title"><a href="/classes/">{{ item.name }}</a></div>
-                                <div class="card-text">{{ item.description |  default:""}}</div>
+                                <div class="card-text">{{ item.description |  default:"" }}</div>
                             </div>
                             <div class="price_box d-flex flex-row align-items-center">
                                 <div class="button button_1 register_button_curs "><a href="/classes/"
@@ -238,7 +238,7 @@
         <div class="testimonials_background_container prlx_parent">
             <div id="map"></div>
         </div>
-    
+
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -331,13 +331,14 @@
 
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-6 offset-3">
-                    <script type="text/javascript"  src="https://vk.com/js/api/openapi.js?159"></script>
+                    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
 
                     <!-- VK Widget -->
                     <div id="vk_groups"></div>
-                    <script type="text/javascript">
-                        VK.Widgets.Group("vk_groups", {mode: 3, width: "600", color3: '000000'}, 9816344);
-                    </script>
+
+                    {#                    <div id="vk_groups"></div>#}
+                    {#                    <script  src="//vk.com/js/api/openapi.js?159" async onload="VK.Widgets.Group('vk_groups', {mode: 3, width: '600', color3: '000000'}, 9816344)"></script>#}
+
                 </div>
             </div>
         </div>
@@ -489,6 +490,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> ав�
 <script src="{% static 'js/gmaps.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
 <script src="{% static 'js/maps.js' %}"></script>
+
+<script  src="//vk.com/js/api/openapi.js?159" async onload="VK.Widgets.Group('vk_groups', {mode: 3, width: '600', color3: '000000'}, 9816344);"></script>
 
 </body>
 </html>
